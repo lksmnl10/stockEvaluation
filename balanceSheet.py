@@ -123,12 +123,12 @@ def calcRatios(numList):
                   "P/BV",
                   "ROE"]
     return templateList, emptyList
-def combine(template):
+def evaluateManual(template):
     # asking for values
     rawData = template #askLoop(template)
     modifiedData=calcRatios(rawData)
     return  modifiedData
 
 lish=[147.0, 7643.0, 1.84, 2063.0, 175552.0, 36477.0,42026, 7750.0, 286556.0, 5516.0, 69420.0, 66662.0, 184226.0, 0.0, 102330.0, 125843.0, 42910.0, 16876.0, 18213.0, 4885.0, 11682.0, 729.0, 4448.0]
-damn=combine(lish)
-print(damn[0], "\n", damn[1])
+firstCompany=evaluateManual(lish)
+print(firstCompany[0], "\n", firstCompany[1])
