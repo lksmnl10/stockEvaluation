@@ -55,7 +55,7 @@ def calcRatios(numList):
     totalCurrentLiabilities = numList[10]
     longTermDebt = numList[11]
     totalLiabilities = numList[12]
-    preferredShares = numList[13];print(preferredShares, "preferred shares")
+    preferredShares = numList[13];#print(preferredShares, "preferred shares")
     totalEquity =  numList[14]
     revenue = numList[15]
     totalCostOfSalesOrRevenue = numList[16]
@@ -63,7 +63,7 @@ def calcRatios(numList):
     salesNMarketing = numList[18]
     generalNAdmin = numList[19]
     depreciation = numList[20]
-    interests = numList[21];print(interests)
+    interests = numList[21];#print(interests)
     tax = numList[22]
 
     #----------------------------------------------------- Math Calculations
