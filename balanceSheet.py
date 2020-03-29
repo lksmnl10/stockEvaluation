@@ -12,20 +12,20 @@ template=['Price',
           'goodwill',
           'IntangibleAsset',
           'TotalAssets',
-          'ShortermDebt',
+          'ShortermDebt-or-TermDebt',
           'TotalCurrentLiabilities',
           'LongTermDebt',
           "TotalLiabilities",
           'PreferredShares',
-          'TotalEquity',
-          'Revenue',
+          'TotalEquity-or-totalShareholderEquity',
+          'Revenue-or-totalNetSales',
           'TotalCostOfSalesOrRevenue',
           'ResearchNDevelopment',
           'SalesNMarketing',
           'GeneralNAdmin',
           'Depreciation',
           'Interests',
-          'Tax']
+          'Tax-provisionForIncomeTax']
 def askLoop(list):
     listLength=len(list)
     # this is just numbers; all numbers according to the list
@@ -125,10 +125,10 @@ def calcRatios(numList):
     return templateList, emptyList
 def evaluateManual(template):
     # asking for values
-    rawData = template #askLoop(template)
+    rawData = askLoop(template)#template
     modifiedData=calcRatios(rawData)
     return  modifiedData
 
 lish=[147.0, 7643.0, 1.84, 2063.0, 175552.0, 36477.0,42026, 7750.0, 286556.0, 5516.0, 69420.0, 66662.0, 184226.0, 0.0, 102330.0, 125843.0, 42910.0, 16876.0, 18213.0, 4885.0, 11682.0, 729.0, 4448.0]
-firstCompany=evaluateManual(lish)
+firstCompany=evaluateManual(template)#lish
 print(firstCompany[0], "\n", firstCompany[1])
