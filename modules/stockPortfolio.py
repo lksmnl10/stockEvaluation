@@ -1,6 +1,6 @@
 import essentials, credit, debit, stockPortfolio
 #--------------------------------------------------------------------------------------------------------------------------------------------
-date=convertDates()
+date=essentials.convertDates()
 
 
 def trade(list):

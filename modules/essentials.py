@@ -18,7 +18,16 @@ def convertDates():
             for i in range(4):            # adds the year
                 realDate += date[i]
             return realDate
-#z=convertDates();print(z)
+# date?
+def inputDate():
+    # of course ask first
+    asdf=str(input("Mannually input Date? ----Y/N-----")); asdf=asdf.capitalize()
+    if asdf[0]=="Y":
+        delta = str(alfred(list[i]))
+        return delta
+    else:
+        delta=convertDates()
+        return delta
 # this is for balance sheet and for annual only
 def alfred(query):
     quest = input("what is the " + str(query)+ "? ")
@@ -29,6 +38,14 @@ def askLoop(list):
     # this is just numbers; all numbers according to the list
     emptyList = [0]*(listLength)
     for i in range(listLength):
+        # asking according to the list
+        if list[i] == "Date" or list[i]=="Category" or list[i]=="Reason" or list[i]=="Due":
+            if list[i] == "Date":
+                emptyList[i]=inputDate()
+            else:
+                delta = str(alfred(list[i]))
+                emptyList[i] = delta
+        else:
             # asking according to the list
             delta = float(alfred(list[i]))
             emptyList[i] = delta
