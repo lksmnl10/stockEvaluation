@@ -1,18 +1,7 @@
 import essentials, credit, debit, stockPortfolio
 #--------------------------------------------------------------------------------------------------------------------------------------------
-def alfred(query):
-    quest=input("what is " + str(query) + "?")
-    return quest
-# import date
-def importDate():
-    #import date from datetime
-    from datetime import date
-    # today's date want to have a date in string format
-    today = str(date.today())  # today's date 2020-03-05 format
-    # print(today)
-    # type(todayIs); this makes the variable give out the data type
-    return today
-# loop for query
+date=convertDates()
+
 
 def trade(list):
     today = False
@@ -51,4 +40,4 @@ def trade(list):
         return modifiedList
 # list1=[DO,DB,Stock,BID,ASK,SD,AD,PL]
 list1=["DateOrdered","DateB","StockName","BID","ASK","AD","SD","PL"]
-doing=trade(list1); print(doing)
+#doing=trade(list1); print(doing)
