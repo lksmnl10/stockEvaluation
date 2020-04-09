@@ -1,3 +1,8 @@
-import essentials
+# import essentials
 # functions includes
 # convertDates
+# some_file.py
+import sys
+# insert at 1, 0 is the script path (or '' in REPL)
+sys.path.insert(1, 'modules')
+import balanceSheet,essentials,credit,debit,stockPortfolio
