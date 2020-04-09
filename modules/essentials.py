@@ -23,7 +23,7 @@ def inputDate():
     # of course ask first
     asdf=str(input("Mannually input Date? ----Y/N-----")); asdf=asdf.capitalize()
     if asdf[0]=="Y":
-        delta = str(alfred(list[i]))
+        delta = str(alfred("Date ---- Jan 24, 2020"))
         return delta
     else:
         delta=convertDates()
@@ -47,7 +47,7 @@ def askLoop(list):
                 emptyList[i] = delta
         else:
             # asking according to the list
-            delta = float(alfred(list[i]))
+            delta = round(float(alfred(list[i])),2)
             emptyList[i] = delta
     modifiedList = emptyList
     return modifiedList
