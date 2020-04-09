@@ -1,21 +1,5 @@
-def date(today):
-    #------------Month ----------------------
-    #dictionary for date
-    # only str for month
-    monthLabel=["Jan","Feb","Mar","Apr","May","June","July","Aug","Sep","Oct","Nov","Dec"]
-    # this month
-    monthValue=int(today[5]+today[6])
-    # Value corresponding value
-    monthNumb=[1,2,3,4,5,6,7,8,9,10,11,12]
-    # ASSIGNING MONTH
-    monthSTR=catergoryMonth[monthValue-1]
-    #-----------Year Related----------------
-    year=today[0]+today[1]+today[2]+today[3]
-    #-----------Day ------------------------
-    day=today[8]+today[9]
-    #-----------Compile Date----------------
-    result=monthSTR+" " +day+","+year
-    return result
+import essentials
+#
 # exclusively for asking
 def alfred(query):
     quest=input("what is " + str(query) + "?")

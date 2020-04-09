@@ -17,7 +17,5 @@ def convertDates():
                 realDate += date[i]
             return realDate
 #z=convertDates();print(z)
-def askDate():
-    asker=str(str(input("Manually Input Date?")))
-    print(asker)
-x=askDate();print(x)
+
+a=convertDates(); print(a)
