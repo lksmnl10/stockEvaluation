@@ -1,7 +1,5 @@
-import essentials
-# functions includes
-# convertDates
-# exclusively for asking
+import essentials, credit, debit, stockPortfolio
+#--------------------------------------------------------------------------------------------------------------------------------------------
 def alfred(query):
     quest=input("what is " + str(query) + "?")
     return quest

@@ -1,3 +1,4 @@
+#--------------------------------------------------------------------------------------------------------------------------------------------
 # date important
 def convertDates():
     # import
@@ -18,5 +19,19 @@ def convertDates():
                 realDate += date[i]
             return realDate
 #z=convertDates();print(z)
+# this is for balance sheet and for annual only
+def alfred(query):
+    quest = input("what is the " + str(query)+ "? ")
+    return quest
+# 21
+def askLoop(list):
+    listLength = len(list)
+    # this is just numbers; all numbers according to the list
+    emptyList = [0]*(listLength)
+    for i in range(listLength):
+            # asking according to the list
+            delta = float(alfred(list[i]))
+            emptyList[i] = delta
+    modifiedList = emptyList
+    return modifiedList
 
-a=convertDates(); print(a)

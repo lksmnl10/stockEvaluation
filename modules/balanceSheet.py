@@ -1,8 +1,5 @@
-# this is for balance sheet and for annual only
-def alfred(query):
-    quest = input("what is the " + str(query)+ "? ")
-    return quest
-# 21
+import essentials, credit, debit, stockPortfolio
+#--------------------------------------------------------------------------------------------------------------------------------------------
 template = ['Price',
           'OutstandingShares',
           'DividendsPerShare',
@@ -26,16 +23,7 @@ template = ['Price',
           'Depreciation',
           'Interests-from-otherincome/(expense),net',
           'Tax-or-provisionForIncomeTax']
-def askLoop(list):
-    listLength = len(list)
-    # this is just numbers; all numbers according to the list
-    emptyList = [0]*(listLength)
-    for i in range(listLength):
-            # asking according to the list
-            delta = float(alfred(list[i]))
-            emptyList[i] = delta
-    modifiedList = emptyList
-    return modifiedList
+
 # hello=askLoop(template);print(hello)
 def calcRatios(numList):
     #round place
