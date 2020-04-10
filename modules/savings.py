@@ -1,3 +1,4 @@
-import essentials, credit, debit, stockPortfolio
+import essentials#, credit, debit, stockPortfolio
 #--------------------------------------------------------------------------------------------------------------------------------------------
-template=["Date","Category","CN","101SA","SIMPLII_SA","RSP","EQ_101","EQ-E-SA","WS-CASH",]
+template=["Date","Category","ConfirmationNumber","TAN101SA","SIMPLIISA","RSP","EQ101","EQESA","WSCASH"]
+x=essentials.askLoop(template);print(x)

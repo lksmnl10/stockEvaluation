@@ -28,34 +28,43 @@ def inputDate():
     else:
         delta=convertDates()
         return delta
-# this is for balance sheet and for annual only
+#--------------------------------------------------------------------------------------------------------------------------------------------
+# ask loop
 def alfred(query):
+    # query is interchangeable
     quest = input("what is the " + str(query)+ "? ")
     return quest
-# 21
+# Asking in Loop
 def askLoop(list):
     listLength = len(list)
     # this is just numbers; all numbers according to the list
     emptyList = [0]*(listLength)
     for i in range(listLength):
-        # asking according to the list
-        if list[i] == "Date" or list[i]=="Category" or list[i]=="Reason" or list[i]=="Due":
-            if list[i] == "Date":
-                emptyList[i]=inputDate()
-            else:
-                delta = str(alfred(list[i]))
-                emptyList[i] = delta
+        #strings exclusive
+        if list[i] == "Date":
+            emptyList[i] = inputDate()
+        elif list[i] == "Category":
+            delta = str(alfred(list[i]))
+            emptyList[i] = delta
+        elif list[i] == "Reason":
+            delta = str(alfred(list[i]))
+            emptyList[i] = delta
+        elif list[i] == "Due":
+            delta = str(alfred(list[i]))
+            emptyList[i] = delta
+        elif list[i] == "ConfirmationNumber":
+            delta = int(float(alfred(list[i])))
+            emptyList[i] = delta
         else:
-            # asking according to the list non STR
-            if list[i] == "ConfirmationNumber":
+            if list[i] == "TAN101SA" or list[i] == "BNS-AMEX" or list[i] == "Simplii":
                 delta = round(float(alfred(list[i])), 2)
                 emptyList[i] = delta
+            elif delta > 0:
+                   list[i]=0
+            # non-strings
             else:
-                if delta>=1.0:
-                    list[i]=0.0
-                else:
-                    delta = round(float(alfred(list[i])), 2)
-                    emptyList[i] = delta
+                delta = int(float(alfred(list[i])))
+                emptyList[i] = delta
     modifiedList = emptyList
     return modifiedList
-
+#--------------------------------------------------------------------------------------------------------------------------------------------
