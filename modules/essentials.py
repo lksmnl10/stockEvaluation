@@ -46,9 +46,16 @@ def askLoop(list):
                 delta = str(alfred(list[i]))
                 emptyList[i] = delta
         else:
-            # asking according to the list
-            delta = round(float(alfred(list[i])),2)
-            emptyList[i] = delta
+            # asking according to the list non STR
+            if list[i] == "ConfirmationNumber":
+                delta = round(float(alfred(list[i])), 2)
+                emptyList[i] = delta
+            else:
+                if delta>=1.0:
+                    list[i]=0.0
+                else:
+                    delta = round(float(alfred(list[i])), 2)
+                    emptyList[i] = delta
     modifiedList = emptyList
     return modifiedList
 
