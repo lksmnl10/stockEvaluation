@@ -1,6 +1,20 @@
 #--------------------------------------------------------------------------------------------------------------------------------------------
+# ask
+def singleAsk(query):
+    # query is interchangeable
+    quest = input("what is the " + str(query)+ "? ")
+    return quest
+# Asking in Loop
+def askLoop(list,type):
+    listLength = len(list)
+    modifiedList = [0]*(listLength)
+    # query is interchangeable
+    for i in range(listLength):
+        modifiedList[i]=singleAsk(list[i])
+    return modifiedList
+#--------------------------------------------------------------------------------------------------------------------------------------------
 # date important
-def convertDates():
+def autoDate():
     # import
     from datetime import date
     date = date.today()
@@ -18,53 +32,14 @@ def convertDates():
             for i in range(4):            # adds the year
                 realDate += date[i]
             return realDate
-# date?
-def inputDate():
+# manual date or automatic Date?
+def checkDate():
     # of course ask first
-    asdf=str(input("Mannually input Date? ----Y/N-----")); asdf=asdf.capitalize()
-    if asdf[0]=="Y":
-        delta = str(alfred("Date ---- Jan 24, 2020"))
+    quest=str(input("Mannually input Date? ----Y/N-----")); quest=quest.capitalize()
+    if quest[0]=="Y":
+        delta = str(singleAsk("Date? ---- Jan 24, 2020 -----------"))
         return delta
     else:
-        delta=convertDates()
+        delta=autoDate()
         return delta
-#--------------------------------------------------------------------------------------------------------------------------------------------
-# ask loop
-def alfred(query):
-    # query is interchangeable
-    quest = input("what is the " + str(query)+ "? ")
-    return quest
-# Asking in Loop
-def askLoop(list):
-    listLength = len(list)
-    # this is just numbers; all numbers according to the list
-    emptyList = [0]*(listLength)
-    for i in range(listLength):
-        #strings exclusive
-        if list[i] == "Date":
-            emptyList[i] = inputDate()
-        elif list[i] == "Category":
-            delta = str(alfred(list[i]))
-            emptyList[i] = delta
-        elif list[i] == "Reason":
-            delta = str(alfred(list[i]))
-            emptyList[i] = delta
-        elif list[i] == "Due":
-            delta = str(alfred(list[i]))
-            emptyList[i] = delta
-        elif list[i] == "ConfirmationNumber":
-            delta = int(float(alfred(list[i])))
-            emptyList[i] = delta
-        else:
-            if list[i] == "TAN101SA" or list[i] == "BNS-AMEX" or list[i] == "Simplii":
-                delta = round(float(alfred(list[i])), 2)
-                emptyList[i] = delta
-            elif delta > 0:
-                   list[i]=0
-            # non-strings
-            else:
-                delta = int(float(alfred(list[i])))
-                emptyList[i] = delta
-    modifiedList = emptyList
-    return modifiedList
 #--------------------------------------------------------------------------------------------------------------------------------------------
